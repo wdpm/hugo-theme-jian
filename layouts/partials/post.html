@@ -3,7 +3,9 @@
 <div class="post">
     <!-- post title -->
     <div class="post__title">
-        <h2><a href='{{ .RelPermalink }}'>{{ .Title }}</a></h2>
+        <h2 class="post__title-text">
+            <a class="post__title-link" href='{{ .RelPermalink }}'>{{ .Title }}</a>
+        </h2>
     </div>
 
     <!-- post summary -->
@@ -18,21 +20,19 @@
     <!-- post footer -->
     <div class="post__footer">
         <div class="meta">
-            <div class="info">
-                <span class="field">
-                    <i class="ri-map-pin-time-line"></i>
-                    <span class="date">{{ .Date.Format "2006.01.02" }}</span>
-                </span>
-                
-                {{ with .Params.tags }}
-                <span class="field tags">
-                    <i class="ri-stack-line"></i>
-                    {{ range . }}
-                    <a href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
-                    {{ end }}
-                </span>
+            <span class="meta__timeline">
+                <i class="ri-map-pin-time-line"></i>
+                <span class="meta__datetime">{{ .Date.Format "2006.01.02" }}</span>
+            </span>
+
+            {{ with .Params.tags }}
+            <span class="meta__tags">
+                <i class="ri-stack-line"></i>
+                {{ range . }}
+                <a class="meta__tags-link" href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
                 {{ end }}
-            </div>
+            </span>
+            {{ end }}
         </div>
     </div>
 </div>

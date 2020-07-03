@@ -1,23 +1,29 @@
 <header class="header">
     <div class="site-title">
-        <div class="site-title__title">
-            <h1>
-                <a href="{{ .Site.BaseURL }}">
+
+        <!-- site-title body -->
+        <div class="site-title__body">
+            <h1 class="site-title__title">
+                <a class="site-title__link" href="{{ .Site.BaseURL }}">
                     <span>{{ .Site.Title }}</span>
                 </a>
             </h1>
         </div>
-        <div class="site-title__description">
-            <p class="sub_title">{{ with .Site.Params.subTitle }}{{ . }}{{ else }}{{ end }}</p>
-            <div class="my_socials">
+
+        <!-- site-title description -->
+        <div class="site-title__description social">
+            <p class="social__title">{{ with .Site.Params.subTitle }}{{ . }}{{ else }}{{ end }}</p>
+            <div class="social__icons">
                 {{ range $key, $val := .Site.Social }}
                 {{ if ne $val "" }}
-                <a href="{{ $val }}" title="{{ $key }}" target="_blank"><i class="ri-{{ $key }}-fill"></i></a>
+                <a class="social__link" href="{{ $val }}" title="{{ $key }}" target="_blank"><i
+                        class="ri-{{ $key }}-fill"></i></a>
                 {{ end }}
                 {{ end }}
-                <a href="{{ .Site.RSSLink }}" type="application/rss+xml" title="rss" target="_blank"><i
-                        class="ri-rss-fill"></i></a>
+                <a class="social__link" href="{{ .Site.RSSLink }}" type="application/rss+xml" title="rss"
+                    target="_blank"><i class="ri-rss-fill"></i></a>
             </div>
         </div>
+
     </div>
 </header>

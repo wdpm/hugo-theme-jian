@@ -6,13 +6,13 @@
         {{ partial "header.html" . }}
         <div class="content">
             <div class="tags">
-                <ul>
+                <ul class="tags__container">
                     {{ $data := .Data }}
                     {{ range $key, $value := .Data.Terms.ByCount }}
                     {{ if ($value.Name) }}
-                    <li>
+                    <li class="tags__item">
                         <a href="{{ $data.Plural | absURL }}/{{ $value.Name | urlize }}">
-                            {{ $value.Name }} <span class="terms-count">{{ $value.Count }}</span>
+                            {{ $value.Name }} <span class="tags__item-count">{{ $value.Count }}</span>
                         </a>
                     </li>
                     {{ end }}
