@@ -1,0 +1,35 @@
+{{ partial "head.html" . }}
+
+<body>
+    <div class="main">
+        {{ partial "nav.html" . }}
+        {{ partial "header.html" . }}
+        <div class="content">
+            <div class="archive">
+                {{ range .Data.Pages.GroupByDate "2006" }}
+                <!-- group by year -->
+                <div class="archive__title">{{ .Key }}</div>
+                <div class="archive__list">
+                    <!-- iterate all pages per year -->
+                    {{ range .Pages }}
+                    <div class="archive__item">
+                        <div class="archive__post">
+                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                            <div class="post-time"><span class="date">{{ .Date.Format "01-02" }}</span></div>
+                        </div>
+                    </div>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+
+            <!-- pagination -->
+            <div class="pagination"></div>
+        </div>
+        <a id="backToTop" href="#" class="back-to-top"><i class="ri-arrow-up-s-line"></i></a>
+    </div>
+    {{ partial "footer.html" . }}
+    {{ partial "js.html" . }}
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+<div class="nav-container">
+    <nav class="site-nav" id="siteNav">
+        <ul>
+            {{ range .Site.Menus.main }}
+            <li>
+                <a href="{{ .URL | safeURL }}">{{ .Name }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </nav>
+    <div class="menu-icon">
+        <a id="menuIcon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
