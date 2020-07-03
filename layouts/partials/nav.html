@@ -1,5 +1,6 @@
-<div class="nav-container">
-    <nav class="site-nav" id="siteNav">
+<nav class="nav-container">
+    <!-- nav list -->
+    <div class="site-nav" id="siteNav">
         <ul>
             {{ range .Site.Menus.main }}
             <li>
@@ -7,8 +8,10 @@
             </li>
             {{ end }}
         </ul>
-    </nav>
+    </div>
+
+    <!-- nav menu -->
     <div class="menu-icon">
         <a id="menuIcon"><i class="ri-menu-line"></i></a>
     </div>
-</div>
+</nav>

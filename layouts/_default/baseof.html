@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html {{ with .Site.LanguageCode }}lang="{{ . }}" {{ end }}>
     {{- partial "head.html" . -}}
     <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
-        </div>
-        {{- partial "footer.html" . -}}
+        {{ partial "nav.html" . }}
+
+        {{ partial "header.html" . }}
+
+        <main id="content">
+        {{ block "main" . }}{{ end }}
+        </main>
+
+        <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+
+        {{ partial "footer.html" . }}
+
+        {{ partial "js.html" . }}
     </body>
 </html>
