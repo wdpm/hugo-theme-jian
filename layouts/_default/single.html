@@ -4,25 +4,25 @@
 
         <!-- post title -->
         <div class="post__title post__title--detail">
-            <h2><a href='{{ .RelPermalink }}'>{{ .Title }}</a></h2>
-            <span class="date">{{ .Date.Format "2006.01.02" }}</span>
+            <h2>
+                <a class="post__title-link" href='{{ .RelPermalink }}'>{{ .Title }}</a>
+            </h2>
+            <span class="post__title-datetime">{{ .Date.Format "2006.01.02" }}</span>
         </div>
 
         <!-- post content -->
         <div class="post__content markdown">{{ .Content }}</div>
 
         <!-- post footer -->
-        <div class="post__footer">
+        <div class="post__footer post__footer-detail">
             {{ with .Params.tags }}
             <div class="meta">
-                <div class="info">
-                    <span class="field tags">
-                        <i class="ri-stack-line"></i>
-                        {{ range . }}
-                        <a href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
-                        {{ end }}
-                    </span>
-                </div>
+                <span class="meta__tags">
+                    <i class="ri-stack-line"></i>
+                    {{ range . }}
+                    <a class="meta__tags-link" href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
+                    {{ end }}
+                </span>
             </div>
             {{ end }}
         </div>
@@ -33,8 +33,53 @@
     {{ if .Site.Params.valine.enable }}
     {{ partial "comments.html" . }}
     {{ else }}
-    <div class="doc_comments">{{ template "_internal/disqus.html" . }}</div>
+    <div class="post_comments">{{ template "_internal/disqus.html" . }}</div>
     {{ end }}
 
 </div>
+
+<style>
+    .post__title-link {
+        color: black;
+    }
+
+    .post__title--detail .post__title-datetime {
+        font-size: .8rem;
+        color: #555555;
+    }
+
+    .post__content {
+        margin-top: 30px;
+    }
+
+    .post__content a {
+        letter-spacing: 1px;
+        color: #e42b2b;
+    }
+
+    .post__content a:hover {
+        text-decoration: underline;
+    }
+
+    .post__footer {
+        padding: 20px 0;
+        border-bottom: 1px solid #8f8f8f;
+    }
+
+    .meta__tags-link {
+        color: #7e7e7e;
+    }
+
+    .meta__tags-link:hover {
+        color: #1f1f1f;
+        text-decoration: underline;
+    }
+
+    .post_comments {
+        font-size: 14px;
+        color: #2c2c2c;
+        margin-top: 30px;
+        padding: 35px 0 45px;
+    }
+</style>
 {{ end }}

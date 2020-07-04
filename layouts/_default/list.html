@@ -1,5 +1,5 @@
 {{define "content"}}
-<div class="content">
+<div class="archive-container">
     <div class="archive">
         {{ range .Data.Pages.GroupByDate "2006" }}
         <!-- group by year -->
@@ -9,8 +9,8 @@
             {{ range .Pages }}
             <div class="archive__item">
                 <div class="archive__post">
-                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                    <div class="post-time"><span class="date">{{ .Date.Format "01-02" }}</span></div>
+                    <a class="archive__post-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    <div class="archive__post-datetime"><span>{{ .Date.Format "01-02" }}</span></div>
                 </div>
             </div>
             {{ end }}
@@ -18,9 +18,85 @@
         {{ end }}
     </div>
 
-    <!-- pagination -->
+    <!-- pagination TODO-->
     <div class="archive__pagination"></div>
+
     <!-- back to top -->
-    <a id="backToTop" href="#" class="back-to-top"><i class="ri-arrow-up-s-line"></i></a>
+    <a id="backToTop" href="#" class="back-to-top">
+        <i class="ri-arrow-up-s-line"></i>
+    </a>
 </div>
+
+<style>
+    .archive-container{
+        position: relative;
+    }
+
+    .archive {
+        margin: 0;
+        padding: 0;
+    }
+
+    .archive__title {
+        font-size: 1.4rem;
+        color: #1f1f1f;
+        font-weight: bold;
+        padding-top: 10px;
+        line-height: 2.2;
+    }
+
+    .archive__list {
+        margin: 0 0 50px 0;
+        padding: 0;
+        line-height: 2.1;
+    }
+
+    /* refer https://stackoverflow.com/questions/28922126/
+    how-to-align-flexbox-columns-left-and-right */
+    .archive__post {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .archive__post-link {
+        color: #424242;
+    }
+
+    .archive__post-link:hover {
+        color: black;
+    }
+
+    .archive__post-datetime {
+        color: #c5c5c5;
+        font-size: 14px;
+    }
+
+    .archive__pagination{
+        padding: 50px 0 30px 0;
+    }
+
+    /* back to top */
+    .back-to-top {
+        text-decoration: none;
+        position: absolute;
+        bottom: 40px;
+        right: 0;
+        background: #f0f0f0;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        line-height: 36px;
+        font-size: 18px;
+        text-align: center;
+        transition-duration: 0.5s;
+        transition-property: background-color;
+        /* display: none; */
+        display: block;
+    }
+
+    .back-to-top:hover {
+        cursor: pointer;
+        background: #dfdfdf;
+    }
+</style>
 {{end}}

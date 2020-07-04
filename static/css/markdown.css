@@ -1,0 +1,138 @@
+/* custome markdown style */
+.markdown {
+    line-height: 1.8em;
+    word-wrap: break-word;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+.markdown ul, .markdown ol, .markdown dl {
+    margin: 0.8em 0;
+}
+
+.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
+    margin: 20px 0 20px 0;
+    color: #000000;
+}
+
+.markdown h1 {
+    font-size: 1.35em;
+}
+
+.markdown h2 {
+    font-size: 1.25em;
+}
+
+.markdown h3 {
+    font-size: 1.15em;
+}
+
+.markdown h4 {
+    font-size: 1.1em;
+}
+
+.markdown pre, .markdown code {
+    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.9em;
+    background: #f8fafc;
+    border: none;
+    white-space: pre;
+}
+
+.markdown pre {
+    padding: 16px;
+    display: block;
+    overflow: auto;
+    white-space: pre;
+    word-wrap: break-word;
+}
+
+.markdown code {
+    color: #666666;
+    padding: 4px 5px;
+    border-radius: 2px;
+    white-space: nowrap;
+}
+
+.markdown pre code {
+    padding: 0;
+    color: #555555;
+    white-space: pre;
+}
+
+.markdown blockquote p {
+    white-space: pre-line;
+}
+
+.markdown pre::-webkit-scrollbar {
+    height: 10px;
+}
+
+.markdown pre::-webkit-scrollbar-button {
+    display: none;
+}
+
+.markdown pre::-webkit-scrollbar-track {
+    background: white;
+}
+
+.markdown pre::-webkit-scrollbar-thumb {
+    min-height: 1rem;
+    background-color: #cccccc;
+    background-clip: padding-box;
+    border: 3px solid #fdfdfd;
+    border-radius: 5px;
+}
+
+.markdown pre::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+    border-width: 2px;
+}
+
+.markdown blockquote {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 2.5em 0;
+    padding: 0 0 0 50px;
+    font-style: italic;
+    color: #555555;
+    border-left: none;
+}
+
+.markdown blockquote:before {
+    content: '|';
+    display: block;
+    font-family: times, sans-serif;
+    font-style: normal;
+    font-size: 48px;
+    color: #444444;
+    font-weight: bold;
+    line-height: 30px;
+    margin-left: -50px;
+    position: absolute;
+}
+
+.markdown strong, .markdown b, .markdown em {
+    padding: 1px 2px;
+    background-color: #fcfcf0;
+    font-weight: normal;
+}
+
+.markdown img {
+    max-width: 90%;
+    height: auto;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table th {
+    background-color: #f6f8fa;
+}
+
+table th, table td {
+    padding: 10px 20px;
+    border: 1px solid #dfe2e5;
+}

@@ -39,17 +39,17 @@
 {{ end }}
 
 <!-- pagination -->
-<div class="post_pagination">
+<div class="post__pagination">
     {{ if or ($paginator.HasPrev) ($paginator.HasNext) }}
 
     {{ if $paginator.HasPrev }}
-    <a href="{{$paginator.Prev.URL}}" class="pre">
+    <a href="{{$paginator.Prev.URL}}" class="post__pagination-prev">
         {{ i18n "prev_page" }}
     </a>
     {{ end }}
 
     {{ if $paginator.HasNext }}
-    <a href="{{$paginator.Next.URL}}" class="next">
+    <a href="{{$paginator.Next.URL}}" class="post__pagination-next">
         {{ i18n "next_page" }}
     </a>
     {{ end }}
@@ -64,6 +64,12 @@
         background-color: #ffffff;
         /* make every post vertical gap */
         margin-top: 50px;
+    }
+
+    @media screen and (max-width: 900px) {
+        .post {
+            padding-top: 0;
+        }
     }
 
     .post__title-text {}
@@ -104,6 +110,37 @@
     }
 
     .meta__tags-link:hover {
+        color: #1f1f1f;
+        text-decoration: underline;
+    }
+
+    .post__pagination {
+        position: relative;
+        height: 80px;
+        display: flex;
+        align-items: center;
+    }
+
+    .post__pagination-prev {
+        position: absolute;
+        display: inline-block;
+        left: 0;
+        color: #7e7e7e;
+    }
+
+    .post__pagination-prev:hover {
+        color: #1f1f1f;
+        text-decoration: underline;
+    }
+
+    .post__pagination-next {
+        position: absolute;
+        display: inline-block;
+        right: 0;
+        color: #7e7e7e;
+    }
+
+    .post__pagination-next:hover {
         color: #1f1f1f;
         text-decoration: underline;
     }
