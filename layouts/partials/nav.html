@@ -46,7 +46,7 @@
     .nav__list-link {
         display: block;
         white-space: nowrap;
-        padding: 10px;
+        padding: 12px;
         font-size: 14px;
     }
 
@@ -69,5 +69,32 @@
 
     .nav__menu-link {
         display: none;
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 680px) {
+        .nav {
+            position: relative;
+            z-index: 999;
+        }
+
+        .nav__list {
+            display: none;
+        }
+
+        .nav__list--active {
+            display: block;
+            text-align: center;
+            background-color: #ffffff;
+            box-shadow: 0 10px 20px 0 rgba(236, 236, 236, 0.86);
+        }
+
+        .nav__list-item {
+            width: 100%;
+        }
+
+        .nav__menu-link {
+            display: block;
+        }
     }
 </style>

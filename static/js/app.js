@@ -10,10 +10,11 @@ function domReady(fn) {
 
 domReady(() => {
     let menuIcon = document.querySelector("#menuIcon");
-    let navBody = document.querySelector(".nav__body");
+    let navList = document.querySelector(".nav__list");
     menuIcon.addEventListener("click", (event) => {
         console.log("toggle");
         // navBody.classList.toggle("active");
+        navList.classList.toggle("nav__list--active");
     })
 })
 
