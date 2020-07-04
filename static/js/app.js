@@ -11,10 +11,21 @@ function domReady(fn) {
 domReady(() => {
     let menuIcon = document.querySelector("#menuIcon");
     let navList = document.querySelector(".nav__list");
+    let navMenuLinkIcon = menuIcon.querySelector(".nav__menu-link-icon");
     menuIcon.addEventListener("click", (event) => {
-        console.log("toggle");
-        // navBody.classList.toggle("active");
+        // slide down nav list
         navList.classList.toggle("nav__list--active");
+
+        // toggle icon class name
+        // <i class="ri-menu-line"></i>
+        // <i class="ri-close-line"></i>
+        if (navMenuLinkIcon.classList.contains("ri-menu-line")) {
+            navMenuLinkIcon.classList.remove("ri-menu-line");
+            navMenuLinkIcon.classList.add("ri-close-line");
+        } else if (navMenuLinkIcon.classList.contains("ri-close-line")) {
+            navMenuLinkIcon.classList.remove("ri-close-line");
+            navMenuLinkIcon.classList.add("ri-menu-line");
+        }
     })
 })
 

@@ -1,6 +1,5 @@
-/* Uniform character encoding */
+@charset "UTF-8"; /* Uniform character encoding */
 
-@charset "UTF-8";
 /*=========basic styles starts=============*/
 
 /* html style
@@ -70,30 +69,25 @@ a {
     text-decoration: none;
 }
 
-@media screen and (max-width: 900px) {
-    .main {
-        width: 95%;
-        margin-top: 20px;
+/* animation*/
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-3px);
     }
-    /* .nav_container {
-        width: 95%;
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
-    .header, .content {
-        width: 90%;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(3px);
     }
-    .post_page {
-        padding-top: 0;
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
-    .footer a {
-        margin: 0 6px;
-    }
-    .post {
-        margin-top: 40px;
-    }
-    .post .post_title a {
-        font-size: 1.4rem;
-    }
-    .post_footer {
-        padding-bottom: 30px;
-    } */
 }

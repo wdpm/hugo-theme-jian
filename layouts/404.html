@@ -1,9 +1,21 @@
-{{ define "main"}}
+{{ define "content"}}
 <div class="page-not-found">
     <h1>(≥o≤)</h1>
-    <h2>{{ with .Site.Params.title404 }}{{ . }}{{ else }}404 Page Not Found{{ end }}</h2>
-    <!-- i18n 首页 -->
-    <h3><a href="{{ .Site.BaseURL }}">{{ i18n "home"}}</a></h3>
+    <h2 class="page-not-found__message">{{ with .Site.Params.title404 }}{{ . }}{{ else }}404 Page Not Found{{ end }}</h2>
+    <h3 class="page-not-found__action">
+        <a class="page-not-found__action-link" href="{{ .Site.BaseURL }}">{{ i18n "home"}}</a>
+    </h3>
 </div>
-<div class="pagination"></div>
+
+<style>
+    .page-not-found__action-link {
+        text-decoration: none;
+        color: #7f7f7f;
+    }
+
+    .page-not-found__action-link:hover{
+        text-decoration: underline;
+        color: black;
+    }
+</style>
 {{end}}
