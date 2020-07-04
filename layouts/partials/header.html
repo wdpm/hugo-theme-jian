@@ -5,7 +5,7 @@
         <div class="site-title__body">
             <h1 class="site-title__title">
                 <a class="site-title__link" href="{{ .Site.BaseURL }}">
-                    <span>{{ .Site.Title }}</span>
+                    <span class="site-title__text">{{ .Site.Title }}</span>
                 </a>
             </h1>
         </div>
@@ -27,3 +27,57 @@
 
     </div>
 </header>
+
+<style>
+    /* header style */
+
+    .header {
+        width: 720px;
+        padding: 50px 0 100px 0;
+        margin: 0 auto;
+        background-size: cover;
+    }
+
+    .site-title {
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    .site-title__body {
+        flex-grow: 1;
+        /* make h1 text vertically center */
+        display: flex;
+        align-items: center;
+    }
+
+    .site-title__title {
+        margin: 0;
+    }
+
+    .site-title__link {
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .site-title__text {
+        color: black;
+    }
+
+    .site-title__description {}
+
+    .social__icons {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        margin: 5px 0;
+    }
+
+    .social__link {
+        color: #5f5f5f;
+    }
+
+    .social__link:hover {
+        color: black;
+    }
+</style>

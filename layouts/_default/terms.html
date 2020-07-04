@@ -1,31 +1,54 @@
-{{ partial "head.html" . }}
-
-<body>
-    <div class="main">
-        {{ partial "nav.html" . }}
-        {{ partial "header.html" . }}
-        <div class="content">
-            <div class="tags">
-                <ul class="tags__container">
-                    {{ $data := .Data }}
-                    {{ range $key, $value := .Data.Terms.ByCount }}
-                    {{ if ($value.Name) }}
-                    <li class="tags__item">
-                        <a href="{{ $data.Plural | absURL }}/{{ $value.Name | urlize }}">
-                            {{ $value.Name }} <span class="tags__item-count">{{ $value.Count }}</span>
-                        </a>
-                    </li>
-                    {{ end }}
-                    {{ end }}
-                </ul>
-            </div>
-
-            <div class="pagination"></div>
-        </div>
-        <a id="backToTop" href="#" class="back-to-top"><i class="ri-arrow-up-s-line"></i></a>
+{{ define "content"}}
+<div class="content">
+    <div class="tags">
+        <ul class="tags__container">
+            {{ $data := .Data }}
+            {{ range $key, $value := .Data.Terms.ByCount }}
+            {{ if ($value.Name) }}
+            <li class="tags__item">
+                <a class="tags__item-link" href="{{ $data.Plural | absURL }}/{{ $value.Name | urlize }}">
+                    {{ $value.Name }} <span class="tags__item-count">{{ $value.Count }}</span>
+                </a>
+            </li>
+            {{ end }}
+            {{ end }}
+        </ul>
     </div>
-    {{ partial "footer.html" . }}
-    {{ partial "js.html" . }}
-</body>
 
-</html>
+    <div class="pagination"></div>
+</div>
+<style>
+    /* /tags */
+
+    .tags {
+        text-align: center;
+        /* display: flex;
+        min-height: 100vh;
+        flex-direction: column; */
+    }
+
+    .tags__container {
+        margin: 0;
+        padding: 0;
+    }
+
+    .tags__item {
+        margin: 10px 15px;
+        display: inline-block;
+        font-size: 1rem;
+    }
+
+    .tags__item-link{
+        color: #424242;
+    }
+
+    .tags__item-count {
+        display: inline-block;
+        position: relative;
+        top: -8px;
+        right: -2px;
+        color: #6e6969;
+        font-size: 12px;
+    }
+</style>
+{{ end }}

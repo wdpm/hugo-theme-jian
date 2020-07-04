@@ -17,3 +17,53 @@
         <a id="menuIcon"><i class="ri-menu-line"></i></a>
     </div>
 </nav>
+
+<style>
+    /* nav style */
+
+    .nav {
+        position: relative;
+        width: 740px;
+        height: 3rem;
+        margin: 0 auto;
+        padding: 20px 0;
+    }
+
+    .nav__body {}
+
+    .nav__menu {}
+
+    .nav-list {
+        position: absolute;
+        right: 10px;
+    }
+
+    .nav-list__container {
+        position: relative;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-list__item {
+        display: inline-block;
+    }
+
+    .nav-list__link {
+        display: block;
+        white-space: nowrap;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .nav-list__link:link,
+    .nav-list__link:visited {
+        transition: all 0.15s linear;
+        color: #424242;
+    }
+
+    .nav-list__link:hover,
+    .nav-list__link:active {
+        text-decoration: underline;
+    }
+</style>

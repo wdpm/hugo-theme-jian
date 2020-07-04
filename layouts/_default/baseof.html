@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html {{ with .Site.LanguageCode }}lang="{{ . }}" {{ end }}>
-{{- partial "head.html" . -}}
+{{ partial "head.html" . }}
 
 <body>
     <main class="main">
@@ -13,11 +13,29 @@
         </div>
     </main>
 
-    <a id="backToTop" href="#" class="back-to-top"><i class="ri-arrow-up-s-line"></i></a>
-
     {{ partial "footer.html" . }}
 
     {{ partial "js.html" . }}
 </body>
 
 </html>
+
+<style>
+    /* main horizontally center */
+
+    .main {
+        flex: 1;
+        background: #ffffff;
+        box-shadow: 0 10px 20px 0 rgba(236, 236, 236, 0.86);
+        width: 800px;
+        margin: 60px auto 0;
+    }
+
+    /* content style */
+
+    .content {
+        width: 720px;
+        height: auto;
+        margin: 0 auto;
+    }
+</style>

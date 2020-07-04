@@ -39,7 +39,7 @@
 {{ end }}
 
 <!-- pagination -->
-<div class="pagination">
+<div class="post_pagination">
     {{ if or ($paginator.HasPrev) ($paginator.HasNext) }}
 
     {{ if $paginator.HasPrev }}
@@ -56,3 +56,55 @@
 
     {{ end }}
 </div>
+
+<style>
+    /* post style */
+
+    .post {
+        background-color: #ffffff;
+        /* make every post vertical gap */
+        margin-top: 50px;
+    }
+
+    .post__title-text {}
+
+    .post__title-link {
+        color: black;
+    }
+
+    .post__title-link:hover {
+        text-decoration: underline;
+    }
+
+    /* post summary */
+
+    .post__summary-content {}
+
+    /* post footer */
+
+    .post__footer {
+        padding: 15px 0;
+        border-bottom: 1px solid #7e7e7e;
+    }
+
+    .meta {
+        height: 25px;
+        font-size: 16px;
+    }
+
+    .meta__timeline {}
+
+    .meta__datetime {
+        color: #7e7e7e;
+        margin-right: 10px;
+    }
+
+    .meta__tags-link {
+        color: #7e7e7e;
+    }
+
+    .meta__tags-link:hover {
+        color: #1f1f1f;
+        text-decoration: underline;
+    }
+</style>
