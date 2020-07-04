@@ -1,26 +1,20 @@
 <nav class="nav">
-    <!-- nav list -->
-    <!-- nav__body  is child of nav-->
-    <!-- so that new a nav-list as parent(new module) for innner children"  -->
-    <div class="nav__body nav-list" id="siteNav">
-        <ul class="nav-list__container">
-            {{ range .Site.Menus.main }}
-            <li class="nav-list__item">
-                <a class="nav-list__link" href="{{ .URL | safeURL }}">{{ .Name }}</a>
-            </li>
-            {{ end }}
-        </ul>
+    <div class="nav__menu">
+        <a id="menuIcon" class="nav__menu-link">
+            <i class="ri-menu-line"></i>
+        </a>
     </div>
 
-    <!-- nav menu -->
-    <div class="nav__menu">
-        <a id="menuIcon"><i class="ri-menu-line"></i></a>
-    </div>
+    <ul class="nav__list">
+        {{ range .Site.Menus.main }}
+        <li class="nav__list-item">
+            <a class="nav__list-link" href="{{ .URL | safeURL }}">{{ .Name }}</a>
+        </li>
+        {{ end }}
+    </ul>
 </nav>
 
 <style>
-    /* nav style */
-
     .nav {
         position: relative;
         width: 740px;
@@ -29,41 +23,51 @@
         padding: 20px 0;
     }
 
-    .nav__body {}
-
-    .nav__menu {}
-
-    .nav-list {
-        position: absolute;
-        right: 10px;
+    @media screen and (max-width: 900px) {
+        /* make nav not fixed width*/
+        .nav {
+            width: 95%;
+        }
     }
 
-    .nav-list__container {
-        position: relative;
+    .nav__list {
+        display: flex;
+        justify-content: flex-end;
         list-style: none;
         margin: 0;
         padding: 0;
     }
 
-    .nav-list__item {
+    .nav__list-item {
+        list-style: none;
         display: inline-block;
     }
 
-    .nav-list__link {
+    .nav__list-link {
         display: block;
         white-space: nowrap;
         padding: 10px;
         font-size: 14px;
     }
 
-    .nav-list__link:link,
-    .nav-list__link:visited {
+    .nav__list-link:link,
+    .nav__list-link:visited {
         transition: all 0.15s linear;
         color: #424242;
     }
 
-    .nav-list__link:hover,
-    .nav-list__link:active {
+    .nav__list-link:hover,
+    .nav__list-link:active {
         text-decoration: underline;
+    }
+
+    .nav__menu {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .nav__menu-link {
+        display: none;
     }
 </style>
