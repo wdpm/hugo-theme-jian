@@ -1,62 +1,3 @@
-{{ $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
-{{ range $paginator.Pages }}
-<div class="post">
-    <!-- post title -->
-    <div class="post__title">
-        <h2 class="post__title-text">
-            <a class="post__title-link" href='{{ .RelPermalink }}'>{{ .Title }}</a>
-        </h2>
-    </div>
-
-    <!-- post summary -->
-    {{ if .Site.Params.enableSummary }}
-    <div class="post__summary">
-        <div class="post__summary-content markdown">
-            <p>{{ .Summary }}......</p>
-        </div>
-    </div>
-    {{ end }}
-
-    <!-- post footer -->
-    <div class="post__footer">
-        <div class="meta">
-            <span class="meta__timeline">
-                <i class="ri-map-pin-time-line"></i>
-                <span class="meta__datetime">{{ .Date.Format "2006.01.02" }}</span>
-            </span>
-
-            {{ with .Params.tags }}
-            <span class="meta__tags">
-                <i class="ri-stack-line"></i>
-                {{ range . }}
-                <a class="meta__tags-link" href="{{ " tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
-                {{ end }}
-            </span>
-            {{ end }}
-        </div>
-    </div>
-</div>
-{{ end }}
-
-<!-- pagination -->
-<div class="post__pagination">
-    {{ if or ($paginator.HasPrev) ($paginator.HasNext) }}
-
-    {{ if $paginator.HasPrev }}
-    <a href="{{$paginator.Prev.URL}}" class="post__pagination-prev">
-        {{ i18n "prev_page" }}
-    </a>
-    {{ end }}
-
-    {{ if $paginator.HasNext }}
-    <a href="{{$paginator.Next.URL}}" class="post__pagination-next">
-        {{ i18n "next_page" }}
-    </a>
-    {{ end }}
-
-    {{ end }}
-</div>
-
 <style>
     /* post style */
 
@@ -153,3 +94,61 @@
     }
 </style>
 
+{{ $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+{{ range $paginator.Pages }}
+<div class="post">
+    <!-- post title -->
+    <div class="post__title">
+        <h2 class="post__title-text">
+            <a class="post__title-link" href='{{ .RelPermalink }}'>{{ .Title }}</a>
+        </h2>
+    </div>
+
+    <!-- post summary -->
+    {{ if .Site.Params.enableSummary }}
+    <div class="post__summary">
+        <div class="post__summary-content markdown">
+            <p>{{ .Summary }}......</p>
+        </div>
+    </div>
+    {{ end }}
+
+    <!-- post footer -->
+    <div class="post__footer">
+        <div class="meta">
+            <span class="meta__timeline">
+                <i class="ri-map-pin-time-line"></i>
+                <span class="meta__datetime">{{ .Date.Format "2006.01.02" }}</span>
+            </span>
+
+            {{ with .Params.tags }}
+            <span class="meta__tags">
+                <i class="ri-stack-line"></i>
+                {{ range . }}
+                <a class="meta__tags-link" href="{{ " tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
+                {{ end }}
+            </span>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}
+
+<!-- pagination -->
+<div class="post__pagination">
+    {{ if or ($paginator.HasPrev) ($paginator.HasNext) }}
+
+    {{ if $paginator.HasPrev }}
+    <a href="{{$paginator.Prev.URL}}" class="post__pagination-prev">
+        {{ i18n "prev_page" }}
+    </a>
+    {{ end }}
+
+    {{ if $paginator.HasNext }}
+    <a href="{{$paginator.Next.URL}}" class="post__pagination-next">
+        {{ i18n "next_page" }}
+    </a>
+    {{ end }}
+
+    {{ end }}
+</div>

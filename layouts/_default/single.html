@@ -1,42 +1,4 @@
 {{ define "content"}}
-<div class="post-page">
-    <div class="post animated fadeInDown">
-
-        <!-- post title -->
-        <div class="post__title post__title--detail">
-            <h2>
-                <a class="post__title-link" href='{{ .RelPermalink }}'>{{ .Title }}</a>
-            </h2>
-            <span class="post__title-datetime">{{ .Date.Format "2006.01.02" }}</span>
-        </div>
-
-        <!-- post content -->
-        <div class="post__content markdown">{{ .Content }}</div>
-
-        <!-- post footer -->
-        <div class="post__footer post__footer-detail">
-            {{ with .Params.tags }}
-            <div class="meta">
-                <span class="meta__tags">
-                    <i class="ri-stack-line"></i>
-                    {{ range . }}
-                    <a class="meta__tags-link" href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
-                    {{ end }}
-                </span>
-            </div>
-            {{ end }}
-        </div>
-
-    </div>
-    <!-- comment system -->
-    {{ if .Site.Params.valine.enable }}
-    {{ partial "comments.html" . }}
-    {{ else }}
-    <div class="post_comments">{{ template "_internal/disqus.html" . }}</div>
-    {{ end }}
-
-</div>
-
 <style>
     .post__title-link {
         color: black;
@@ -104,4 +66,42 @@
         background: #dfdfdf;
     }
 </style>
+
+<div class="post-page">
+    <div class="post animated fadeInDown">
+
+        <!-- post title -->
+        <div class="post__title post__title--detail">
+            <h2>
+                <a class="post__title-link" href='{{ .RelPermalink }}'>{{ .Title }}</a>
+            </h2>
+            <span class="post__title-datetime">{{ .Date.Format "2006.01.02" }}</span>
+        </div>
+
+        <!-- post content -->
+        <div class="post__content markdown">{{ .Content }}</div>
+
+        <!-- post footer -->
+        <div class="post__footer post__footer-detail">
+            {{ with .Params.tags }}
+            <div class="meta">
+                <span class="meta__tags">
+                    <i class="ri-stack-line"></i>
+                    {{ range . }}
+                    <a class="meta__tags-link" href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
+                    {{ end }}
+                </span>
+            </div>
+            {{ end }}
+        </div>
+
+    </div>
+    <!-- comment system -->
+    {{ if .Site.Params.valine.enable }}
+    {{ partial "comments.html" . }}
+    {{ else }}
+    <div class="post_comments">{{ template "_internal/disqus.html" . }}</div>
+    {{ end }}
+
+</div>
 {{ end }}

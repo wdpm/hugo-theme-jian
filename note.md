@@ -67,5 +67,4 @@ move it to `themes/your_name/static/css/`
 ```
 
 ## TODO
-- back to top
 - toc support
