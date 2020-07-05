@@ -17,7 +17,7 @@ pygmentscodefencesguesssyntax = true
 canonifyURLs = true
 
 [author]                               # essential # 必需
-  name = "wdpm"
+  name = "you"
 
 [blackfriday]
   smartypants = false
@@ -52,24 +52,24 @@ canonifyURLs = true
   enableSummary = true                                                 # display the article summary  # 是否显示文章摘要
   # title404 = ""
   mainSections = ["posts","post"]
-  
+
 # Valine.
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://valine.js.org
 [params.valine]
   enable = false
-  appId = ""
-  appKey = ""
-  placeholder = " "
+  appId = "<your-id>"
+  appKey = "<your-key>"
+  placeholder = "input comment..."
   visitor = true
 
 # Your socail's url
 [social]
-  github = "wdpm"
-  twitter = ""
-  facebook = ""
-  weibo = ""
-  instagram = ""
+  github = "http://github.com/[username]"
+  twitter = "http://twitter.com/[username]"
+  facebook = "http://facebook.com/[username]"
+  weibo = "http://weibo.com/[username]"
+  instagram = "https://www.instagram.com/[username]"
 
 # ref : https://gohugo.io/getting-started/configuration-markup#highlight
 [markup]

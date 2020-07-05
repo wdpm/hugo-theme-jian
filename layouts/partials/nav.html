@@ -6,7 +6,7 @@
         </a>
     </div>
 
-    <ul class="nav__list">
+    <ul class="nav__list nav--animated nav--fadeInDown">
         {{ range .Site.Menus.main }}
         <li class="nav__list-item">
             <a class="nav__list-link" href="{{ .URL | safeURL }}">{{ .Name }}</a>
@@ -77,6 +77,16 @@
         .nav {
             position: relative;
             z-index: 999;
+        }
+
+        /* animation fadeInDown*/
+        .nav--animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+
+        .nav--fadeInDown {
+            animation-name: fadeInDown;
         }
 
         .nav__list {

@@ -16,12 +16,12 @@
             <div class="social__icons">
                 {{ range $key, $val := .Site.Social }}
                 {{ if ne $val "" }}
-                <a class="social__link" href="{{ $val }}" title="{{ $key }}" target="_blank"><i
+                <a class="social__link" href="{{ $val}}" title="{{ $key }}" target="_blank"><i
                         class="ri-{{ $key }}-fill"></i></a>
                 {{ end }}
                 {{ end }}
                 <a class="social__link" href="{{ .Site.RSSLink }}" type="application/rss+xml" title="rss"
-                    target="_blank"><i class="ri-rss-fill"></i></a>
+                   target="_blank"><i class="ri-rss-fill"></i></a>
             </div>
         </div>
 
@@ -70,7 +70,9 @@
         color: black;
     }
 
-    .site-title__description {}
+    .site-title__description {
+        text-align: right;
+    }
 
     .social__icons {
         position: relative;
@@ -81,6 +83,7 @@
 
     .social__link {
         color: #5f5f5f;
+        padding-left: 10px;
     }
 
     .social__link:hover {

@@ -45,11 +45,11 @@
 
     <!-- css link -->
     <link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/normalize.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ "css/remixicon.css" |absURL }}" />
+    <link rel="stylesheet" type="text/css" media="screen"
+          href="//cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="{{ "css/basic.css" |absURL }}" />
     <link rel="stylesheet" type="text/css" media="screen" href="{{ "css/highlight.css" | absURL }}" />
     <link rel="stylesheet" type="text/css" media="screen" href="{{ "css/markdown.css" | absURL }}" />
-
 
     <!-- custom css -->
     {{ range .Site.Params.customCSS }}

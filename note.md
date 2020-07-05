@@ -65,3 +65,7 @@ move it to `themes/your_name/static/css/`
   </ul>
 </nav>
 ```
+
+## TODO
+- back to top
+- toc support
