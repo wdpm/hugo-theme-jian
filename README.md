@@ -21,9 +21,9 @@ Jian is a very simple but elegant Hugo theme for blog.
 
 ## Screenshots
 
-<p align="center">
-  <img src="images/about_iPhone_6_7_8_Plus.png" width="300">
-  <img src="images/home_iPad.png" width="600">
+<p>
+  <img src="images/about_iPhone_6_7_8_Plus.png" width="200">
+  <img src="images/home_iPad.png" width="400">
 </p>
 
 ## Installation
