@@ -21,10 +21,7 @@ Jian is a very simple but elegant Hugo theme for blog.
 
 ## Screenshots
 
-<p>
-  <img src="images/about_iPhone_6_7_8_Plus.png" width="200">
-  <img src="images/home_iPad.png" width="400">
-</p>
+![](images/screenshot.png)
 
 ## Installation
 
@@ -39,6 +36,13 @@ Now you can write post under the root folder in /content.
 ## ExampleSite
 
 There is an example site with config file and markdown files in exampleSite directory.
+
+### preview exampleSite
+```bash
+cd /path/to/dir/themes/jian/exampleSite
+hugo server --themesDir ../..
+```
+Browse site on http://localhost:1313
 
 ## About Page
 
@@ -65,6 +69,14 @@ Set the `enable = true` under `[params.valine]` to open valine, and will be `app
 You can add a social link panel in the header by adding entries to the social block in the `config.toml`.
 
 [Remix icon](https://remixicon.com/) is used in this theme.
+
+## Nearly finished
+
+In order to see your site in action, run Hugo's built-in local server.
+```bash
+$ hugo server
+```
+Now enter localhost:1313 in the address bar of your browser.
 
 ## License
 
