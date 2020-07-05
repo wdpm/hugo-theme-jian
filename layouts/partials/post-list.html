@@ -29,7 +29,7 @@
             <span class="meta__tags">
                 <i class="ri-stack-line"></i>
                 {{ range . }}
-                <a class="meta__tags-link" href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
+                <a class="meta__tags-link" href="{{ " tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
                 {{ end }}
             </span>
             {{ end }}
@@ -72,7 +72,8 @@
         }
     }
 
-    .post__title-text {}
+    .post__title-text {
+    }
 
     .post__title-link {
         color: black;
@@ -84,7 +85,8 @@
 
     /* post summary */
 
-    .post__summary-content {}
+    .post__summary-content {
+    }
 
     /* post footer */
 
@@ -98,7 +100,8 @@
         font-size: 16px;
     }
 
-    .meta__timeline {}
+    .meta__timeline {
+    }
 
     .meta__datetime {
         color: #7e7e7e;
@@ -144,4 +147,9 @@
         color: #1f1f1f;
         text-decoration: underline;
     }
+
+    .back-to-top {
+        display: none !important;
+    }
 </style>
+

@@ -29,27 +29,19 @@ domReady(() => {
     })
 })
 
-// // back-to-top TODO
-// $(document).ready((function (_this) {
-//     return function () {
-//         let bt
-//         bt = $('#back_to_top')
-//         if ($(document).width() > 480) {
-//             $(window).scroll(function () {
-//                 let st
-//                 st = $(window).scrollTop()
-//                 if (st > 30) {
-//                     return bt.css('display', 'block')
-//                 } else {
-//                     return bt.css('display', 'none')
-//                 }
-//             })
-//             return bt.click(function () {
-//                 $('body,html').animate({
-//                     scrollTop: 0,
-//                 }, 800)
-//                 return false
-//             })
-//         }
-//     }
-// })(this))
+// back to top show or hide
+domReady(() => {
+    let backToTop = document.querySelector("#backToTop");
+    let docWidth = document.body.clientWidth || document.documentElement.clientWidth || window.innerWidth;
+    // only apply to wide screen > 480px
+    if (docWidth > 480) {
+        window.addEventListener("scroll", function () {
+            let st = window.scrollY;
+            if (st > 30) {
+                return backToTop.style.display = "block";
+            } else {
+                return backToTop.style.display = "none";
+            }
+        })
+    }
+})

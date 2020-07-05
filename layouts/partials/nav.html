@@ -1,20 +1,3 @@
-<nav class="nav">
-    <div class="nav__menu">
-        <a id="menuIcon" class="nav__menu-link">
-            <i class="ri-menu-line nav__menu-link-icon"></i>
-            <!-- when click, toggle icon class name-->
-        </a>
-    </div>
-
-    <ul class="nav__list nav--animated nav--fadeInDown">
-        {{ range .Site.Menus.main }}
-        <li class="nav__list-item">
-            <a class="nav__list-link" href="{{ .URL | safeURL }}">{{ .Name }}</a>
-        </li>
-        {{ end }}
-    </ul>
-</nav>
-
 <style>
     .nav {
         position: relative;
@@ -109,3 +92,21 @@
         }
     }
 </style>
+
+<nav class="nav">
+    <div class="nav__menu">
+        <a id="menuIcon" class="nav__menu-link">
+            <i class="ri-menu-line nav__menu-link-icon"></i>
+            <!-- when click, toggle icon class name-->
+        </a>
+    </div>
+
+    <ul class="nav__list nav--animated nav--fadeInDown">
+        {{ range .Site.Menus.main }}
+        <li class="nav__list-item">
+            <a class="nav__list-link" href="{{ .URL | safeURL }}">{{ .Name }}</a>
+        </li>
+        {{ end }}
+    </ul>
+</nav>
+

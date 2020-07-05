@@ -20,11 +20,6 @@
 
     <!-- pagination TODO-->
     <div class="archive__pagination"></div>
-
-    <!-- back to top -->
-    <a id="backToTop" href="#" class="back-to-top">
-        <i class="ri-arrow-up-s-line"></i>
-    </a>
 </div>
 
 <style>
@@ -78,9 +73,9 @@
     /* back to top */
     .back-to-top {
         text-decoration: none;
-        position: absolute;
+        position: fixed;
         bottom: 40px;
-        right: 0;
+        right: 40px;
         background: #f0f0f0;
         height: 40px;
         width: 40px;
@@ -90,7 +85,6 @@
         text-align: center;
         transition-duration: 0.5s;
         transition-property: background-color;
-        /* display: none; */
         display: block;
     }
 

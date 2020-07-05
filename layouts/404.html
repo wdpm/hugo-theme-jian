@@ -1,12 +1,4 @@
 {{ define "content"}}
-<div class="page-not-found">
-    <h1>(≥o≤)</h1>
-    <h2 class="page-not-found__message">{{ with .Site.Params.title404 }}{{ . }}{{ else }}404 Page Not Found{{ end }}</h2>
-    <h3 class="page-not-found__action">
-        <a class="page-not-found__action-link" href="{{ .Site.BaseURL }}">{{ i18n "home"}}</a>
-    </h3>
-</div>
-
 <style>
     .page-not-found__action-link {
         text-decoration: none;
@@ -18,4 +10,12 @@
         color: black;
     }
 </style>
+
+<div class="page-not-found">
+    <h1>(≥o≤)</h1>
+    <h2 class="page-not-found__message">{{ with .Site.Params.title404 }}{{ . }}{{ else }}404 Page Not Found{{ end }}</h2>
+    <h3 class="page-not-found__action">
+        <a class="page-not-found__action-link" href="{{ .Site.BaseURL }}">{{ i18n "home"}}</a>
+    </h3>
+</div>
 {{end}}
